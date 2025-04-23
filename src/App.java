@@ -1,5 +1,11 @@
+import Models.Book;
+import Controller.BookController;
+import Views.ViewConsole;
+
 public class App {
     public static void main(String[] args) throws Exception {
+        BookController  bC = new BookController();
+        ViewConsole vC = new ViewConsole();
 
         Book[] books = {
                 new Book("Clean Code", 2008),
@@ -33,6 +39,16 @@ public class App {
                 new Book("Deep Learning", 2016),
                 new Book("The Elements of Statistical Learning", 2001)
         };
+
+        vC.showMessage("El arreglo es: ");
+        vC.printArray(books);
+
+        bC.ordenamientosInsercion(books);
+
+        vC.showMessage("arreglo ordenado");
+        vC.printArray(books);
+
+        
 
     }
 }
